@@ -62,12 +62,7 @@ artools-chroot /art grub-mkconfig -o /boot/grub/grub.cfg
 echo "-----------------------------"
 echo "#### enter root password ####" 
 echo "-----------------------------"
-artools-chroot /art passwd root 
-
-
-echo "-----------------------------"
-echo "##### system is AWAKING #####" 
-echo "-----------------------------"
-umount -R /art 
+artools-chroot /art passwd root &&
+umount -R /art &&
 reboot
 
