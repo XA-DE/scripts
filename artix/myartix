@@ -101,25 +101,24 @@ cp -r add /art/usr/share/fonts/
 
 
 echo "------------------------------"
-echo "##### configuring user x #####" 
+echo "##### configuring user x #####"
 echo "------------------------------"
-artools-chroot /art useradd -mG wheel x 
-echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /art/etc/sudoers 
-git clone https://github.com/XA-DE/dotfiles.git 
-cp -r dotfiles/. /art/home/x 
+arch-chroot /art useradd -mG wheel x
+echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /art/etc/sudoers
+git clone https://github.com/XA-DE/dotfiles.git
+cp -r dotfiles/. /art/home/x
 
 
 echo "------------------------------"
-echo "###### enter x password ######" 
+echo "###### enter x password ######"
 echo "------------------------------"
-artools-chroot /art passwd x 
+arch-chroot /art passwd x
 
 ###############################################################
 
 echo "-----------------------------"
-echo "#### enter root password ####" 
+echo "#### enter root password ####"
 echo "-----------------------------"
-artools-chroot /art passwd root &&
+arch-chroot /art passwd root &&
 umount -R /art &&
 reboot
-
