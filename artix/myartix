@@ -119,6 +119,6 @@ artools-chroot /art passwd x
 echo "-----------------------------"
 echo "#### enter root password ####"
 echo "-----------------------------"
--chroot /art passwd root &&
+artools-chroot /art passwd root &&
 umount -R /art &&
 reboot
