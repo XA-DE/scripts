@@ -49,7 +49,7 @@ echo "-----------------------------"
 echo "###### INSTALLING ARTIX ######" 
 echo "-----------------------------"
 basestrap /art base linux-lts efibootmgr grub networkmanager linux-firmware networkmanager-runit elogind-runit
-genfstab -U /art >> /art/etc/fstab 
+fstabgen -U /art >> /art/etc/fstab 
 
 
 echo "------------------------------"
